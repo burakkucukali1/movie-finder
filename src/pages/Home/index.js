@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { fetchStreamingMovies, fetchPopularsOnTv, fetchForRents, fetchTheatres } from "../service"
+import Card from '../../components/Card/Card'
+import './home.css'
+import { fetchStreamingMovies, fetchPopularsOnTv, fetchForRents, fetchTheatres } from "../../service"
 function Home() {
     const [streamingMovieList, setStreamingMovieList] = useState([]);
     const [popularsOnTv, setPopularsOnTv] = useState([]);
@@ -20,7 +22,12 @@ function Home() {
     return (
         <div>
             <h1>HOME</h1>
+            <div className="card-list">
+                <Card />
+            </div>
+
         </div>
+
     )
 }
 
