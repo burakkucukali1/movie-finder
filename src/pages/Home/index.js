@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../../components/Card/Card'
-import './home.css'
+import './Home.css'
 import { fetchStreamingMovies, fetchPopularsOnTv, fetchForRents, fetchTheatres } from "../../service"
 function Home() {
     const [streamingMovieList, setStreamingMovieList] = useState([]);

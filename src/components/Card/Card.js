@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Card.css'
 import CircularProgress from '../CircularProgress/CircularProgress'
+import ThumbButtons from '../Button/ThumbButtons'
 
 function Card() {
 
     return (
         <div className='card'>
+            <div className='card__buttons'>
+                <ThumbButtons />
+            </div>
             <div className='card__img'>
                 <img alt="test" src="https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg" />
             </div>

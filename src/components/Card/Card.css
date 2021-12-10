@@ -3,6 +3,7 @@
     height:425px;
     position: relative;
     margin-right:3px;
+
 }
 
 .card__img>img{
@@ -19,3 +20,5 @@
 .card__content>h4>span{
     text-align: center;
 }
+
+
