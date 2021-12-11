@@ -31,6 +31,10 @@ white-space: nowrap;
 	outline: inherit;
     
 }
+.selector__h2{
+    margin-right: 20px;
+}
+
 .selector__h3{
     justify-content:center;
     font-size:1em;

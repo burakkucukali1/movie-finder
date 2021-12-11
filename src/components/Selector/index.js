@@ -10,7 +10,7 @@ function Index({ selectList }) {
 
     return (
         <div className="selector">
-            <h2>What's Popular</h2>
+            <h2 className="selector__h2">What's Popular</h2>
             <div className="selector__list">
                 {selectList.map((item, index) => {
                     const className = activeButton === item.name ? "active" : "";
