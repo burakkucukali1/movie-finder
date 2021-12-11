@@ -7,3 +7,13 @@
     padding: 5px;
     border-radius:10px;
 }
+
+@media(max-width:500px){
+    .button-container{
+        width:350px;
+        display: flex;
+        justify-content:space-between;
+        padding: 15px;
+        border-radius:10px;
+    }
+}

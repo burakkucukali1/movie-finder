@@ -14,9 +14,32 @@
     top:205px;
     left:10px;
 }
-
-.card__content>h4>span{
-    text-align: center;
+.card__detail>h4{
+    font-size:1em;
+    font-weight: 700;
 }
-
+.card__detail>p{
+    font-size:1em;
+    color:rgba(0,0,0,0.6)
+}
+.card__detail{
+    margin-top:15px
+}
+@media(max-width:500px){
+.card__img{
+    width:350px;
+    height:550px;
+    border-radius:10px;
+margin-bottom: 140px;
+}
+.card__content{
+    position:absolute;
+    top:520px;
+    left:20px;
+}
+.card__detail>h4{
+    font-size:1.2em;
+    font-weight: 700;
+}
+}
 

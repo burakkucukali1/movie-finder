@@ -1,0 +1,13 @@
+.progressbar{ 
+    width: 40px;
+    height: 40px; 
+}
+.progressbar>svg>text{
+    font-size:60px;
+}
+@media(max-width:500px){
+.progressbar{ 
+    width: 70px;
+    height: 70px; 
+}
+}

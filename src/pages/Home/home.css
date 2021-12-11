@@ -9,3 +9,20 @@
     overflow-y: hidden;
     transition: height .5s linear;
 }
+
+@media(max-width:500px){
+    .container{
+        width: 375px;
+    }
+    .card-list{
+        margin: 0 auto;
+        display:flex;
+        flex-direction:column;
+        width:350px;
+        height: 660px;
+        margin-top:20px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        transition: width .5s linear;
+    }
+}

@@ -59,9 +59,7 @@ function Home() {
     return (
         <div className="container">
             <h1>HOME</h1>
-            <Suspense fallback={<div>loading...</div>}>
-                <Selector selectList={selectList} handleClick={handleClick} activeButton={activeButton} />
-            </Suspense>
+            <Selector selectList={selectList} handleClick={handleClick} activeButton={activeButton} />
             <div className="card-list">
                 {currentList.map((item, index) => {
                     return <div key={index}>

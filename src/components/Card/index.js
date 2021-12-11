@@ -26,8 +26,11 @@ function Card({ name, date, imgSrc, voteRate }) {
                 <div className="card__progressbar">
                     <CircularProgress voteRate={voteRate} />
                 </div>
-                <h4>{name}</h4>
-                <span>{modifedDate}</span>
+                <div className='card__detail'>
+                    <h4>{name}</h4>
+                    <p>{modifedDate}</p>
+
+                </div>
             </div>
         </div>
     )

@@ -59,7 +59,21 @@ white-space: nowrap;
     border-radius:30px;
     background-color:#032541;
     transition:1.0s;
-
-
 }
 
+@media(max-width:500px){
+    .selector{
+        display:block;
+    }
+    .selector__h2{
+        margin-bottom: 10px;
+    }
+    .selector__h3{
+        justify-content:center;
+        font-size:1em;
+        padding:4px 15px;
+        white-space: nowrap;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-size:0.9em;
+    }
+}
