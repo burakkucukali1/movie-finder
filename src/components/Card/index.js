@@ -3,15 +3,10 @@ import './Card.css'
 import CircularProgress from '../CircularProgress/CircularProgress'
 import ThumbButtons from '../Button/ThumbButtons'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useDateConverter } from '../../hooks/useDateConverter'
 
 function Card({ name, date, imgSrc, voteRate }) {
-
-    function dateConverter(dateData) {
-        const dateArr = dateData.split('-');
-        let date1 = new Date(dateArr[0], dateArr[1], dateArr[2]).toString().slice(3, 15)
-        let modifiedDate = date1.slice(0, 7) + ',' + date1.slice(7)
-        return modifiedDate
-    }
+    const modifedDate = useDateConverter(date) //Using Custom Hook
 
     return (
         <div className='card'>
@@ -32,7 +27,7 @@ function Card({ name, date, imgSrc, voteRate }) {
                     <CircularProgress voteRate={voteRate} />
                 </div>
                 <h4>{name}</h4>
-                <span>{dateConverter(date)}</span>
+                <span>{modifedDate}</span>
             </div>
         </div>
     )
