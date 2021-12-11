@@ -3,7 +3,7 @@ import './Card.css'
 import CircularProgress from '../CircularProgress/CircularProgress'
 import ThumbButtons from '../Button/ThumbButtons'
 
-function Card() {
+function Card({ name, date, imgSrc, voteRate }) {
 
     return (
         <div className='card'>
@@ -11,14 +11,14 @@ function Card() {
                 <ThumbButtons />
             </div>
             <div className='card__img'>
-                <img alt="test" src="https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg" />
+                <img alt={name} src={imgSrc} />
             </div>
             <div className='card__content'>
                 <div className="card__progressbar">
-                    <CircularProgress />
+                    <CircularProgress voteRate={voteRate} />
                 </div>
-                <h4>Red Notice</h4>
-                <span>2021-11-04</span>
+                <h4>{name}</h4>
+                <span>{date}</span>
             </div>
         </div>
     )

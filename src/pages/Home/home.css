@@ -1,3 +1,9 @@
 .card-list{
     display:flex;
+    width: 1200px;
+    height:360px;
+    margin:auto;
+    margin-top:20px;
+    flex-direction:wrap;
+    overflow-x: auto;
 }

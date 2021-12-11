@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Progressbar from 'react-js-progressbar';
 
-function CircularProgress() {
-    const [percentage, setPercentage] = useState(60);
-
+function CircularProgress({ voteRate }) {
     return (
         <>
             <div id='progressbarContainer'>
                 <Progressbar
-                    input={percentage}
+                    input={voteRate}
                     pathWidth={20}
                     pathColor={['green', 'yellow']}
                     trailWidth={20}

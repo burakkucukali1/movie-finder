@@ -1,12 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Selector.css'
-function Index({ selectList }) {
-    const [activeButton, setActiveButton] = useState(selectList[0].name)
-
-    const handleClick = (e) => {
-        const name = e.target.name;
-        setActiveButton(name);
-    }
+function Index({ selectList, handleClick, activeButton }) {
 
     return (
         <div className="selector">

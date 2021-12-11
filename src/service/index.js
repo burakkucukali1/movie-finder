@@ -15,7 +15,7 @@ export const fetchStreamingMovies = async () => {
             id: movie.id,
             name: movie.original_title,
             voteRate: parseInt(movie.vote_average) * 10,
-            releaseDate: movie.release_date,
+            date: movie.release_date,
             posterUrl: `${baseImgUrl}${movie.poster_path}`
         }))
         return modifiedData
@@ -28,7 +28,7 @@ export const fetchPopularsOnTv = async () => {
             id: tvPopular.id,
             name: tvPopular.name,
             voteRate: parseInt(tvPopular.vote_average) * 10,
-            firstAirDate: tvPopular.first_air_date,
+            date: tvPopular.first_air_date,
             posterUrl: `${baseImgUrl}${tvPopular.poster_path}`
         }))
         return modifiedData
@@ -41,7 +41,7 @@ export const fetchForRents = async () => {
             id: item.id,
             name: item.original_title,
             voteRate: parseInt(item.vote_average) * 10,
-            releaseDate: item.release_date,
+            date: item.release_date,
             posterUrl: `${baseImgUrl}${item.poster_path}`
         }))
         return modifiedData
@@ -54,7 +54,7 @@ export const fetchTheatres = async () => {
             id: theatre.id,
             name: theatre.original_title,
             voteRate: parseInt(theatre.vote_average) * 10,
-            releaseDate: theatre.release_date,
+            date: theatre.release_date,
             posterUrl: `${baseImgUrl}${theatre.poster_path}`
         }))
         return modifiedData
