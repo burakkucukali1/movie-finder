@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 import Card from '../../components/Card/'
 import Selector from '../../components/Selector/'
 import './Home.css'
@@ -25,7 +25,7 @@ const selectList = [
 function Home() {
     const [activeButton, setActiveButton] = useState(selectList[0].name)
     const [currentList, setCurrentList] = useState([]);
-
+    //12.8 transferred 15.0mb resources finish 7.56s
     const handleClick = (e) => {
         const name = e.target.name;
         setActiveButton(name);
@@ -51,11 +51,17 @@ function Home() {
     }, [activeButton])
 
 
-    console.log(currentList);
+
+    // const Card = lazy(() => import('../../components/Card/'))
+    // const Selector = lazy(() => import('../../components/Selector/'))
+    //Finish 7.25s
+
     return (
         <div className="container">
             <h1>HOME</h1>
-            <Selector selectList={selectList} handleClick={handleClick} activeButton={activeButton} />
+            <Suspense fallback={<div>loading...</div>}>
+                <Selector selectList={selectList} handleClick={handleClick} activeButton={activeButton} />
+            </Suspense>
             <div className="card-list">
                 {currentList.map((item, index) => {
                     return <div key={index}>
