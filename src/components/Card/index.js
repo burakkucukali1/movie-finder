@@ -3,6 +3,7 @@ import './Card.css'
 import CircularProgress from '../CircularProgress/CircularProgress'
 import ThumbButtons from '../Button/ThumbButtons'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDateConverter } from '../../hooks/useDateConverter'
 
 function Card({ name, date, imgSrc, voteRate }) {
