@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Selector from '../../Selector'
 import Card from '../../Card'
-import { fetchFreeMovies, fetchFreeTv } from "../../../service"
+import { serviceWorker } from '../../../helpers/serviceWorker'
+import { freeTvUrl, freeMoviesUrl } from "../../../service/endpoints"
 
 const selectList = [
     {
@@ -14,23 +15,22 @@ const selectList = [
     }
 ];
 function Index() {
-    const [activeButton, setActiveBottomButton] = useState(selectList[0].name)
+    const [activeButton, setActiveButton] = useState(selectList[0].name)
     const [currentList, setCurrentList] = useState([]);
 
-
-    const handleFreeListClick = (e) => {
+    const handleClick = (e) => {
         const name = e.target.name;
-        setActiveBottomButton(name);
+        setActiveButton(name);
     }
 
     useEffect(() => {
 
         switch (activeButton) {
             case 'Movies':
-                fetchFreeMovies().then(data => setCurrentList(data));
+                serviceWorker(freeMoviesUrl).then(data => setCurrentList(data))
                 break;
             case 'TV':
-                fetchFreeTv().then(data => setCurrentList(data));
+                serviceWorker(freeTvUrl).then(data => setCurrentList(data))
                 break;
             default:
                 break;
@@ -40,7 +40,7 @@ function Index() {
 
     return (
         <div>
-            <Selector title={'Free To Watch'} selectList={selectList} handleClick={handleFreeListClick} activeButton={activeButton} />
+            <Selector title={'Free To Watch'} selectList={selectList} handleClick={handleClick} activeButton={activeButton} />
             <div className="card-list">
                 {currentList.map((item, index) => {
                     return <div key={index}>

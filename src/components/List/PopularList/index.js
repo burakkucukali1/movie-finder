@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Selector from '../../Selector'
 import Card from '../../Card'
-
-import { fetchStreamingMovies, fetchPopularsOnTv, fetchForRents, fetchTheatres } from "../../../service"
+import { serviceWorker } from '../../../helpers/serviceWorker'
+import { streamingMovieUrl, onTvUrl, forRentUrl, inTheatresUrl } from "../../../service/endpoints"
 
 const selectList = [
     {
@@ -33,16 +33,16 @@ function Index() {
     useEffect(() => {
         switch (activeButton) {
             case 'Streaming':
-                fetchStreamingMovies().then(data => setCurrentList(data));
+                serviceWorker(streamingMovieUrl).then(data => setCurrentList(data));
                 break;
             case 'On TV':
-                fetchPopularsOnTv().then(data => setCurrentList(data));
+                serviceWorker(onTvUrl).then(data => setCurrentList(data));
                 break;
             case 'For Rent':
-                fetchForRents().then(data => setCurrentList(data));
+                serviceWorker(forRentUrl).then(data => setCurrentList(data));
                 break;
             case 'In Theaters':
-                fetchTheatres().then(data => setCurrentList(data));
+                serviceWorker(inTheatresUrl).then(data => setCurrentList(data));
                 break;
             default:
                 break;
