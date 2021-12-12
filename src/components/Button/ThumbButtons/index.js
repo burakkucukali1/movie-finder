@@ -36,8 +36,8 @@ function Index() {
     }, [counter, visibileStatus])
     return (
         <div className="button-container">
-            <button style={downVisibilityStyle} onClick={(e) => voteDown(e)}>{arrowDown} Down</button>
-            <button style={upVisibilityStyle} onClick={(e) => voteUp(e)}>{arrowUp} Up</button>
+            <button style={downVisibilityStyle} onClick={(e) => voteDown(e)}><div className="arrowDown">{arrowDown}</div></button>
+            <button style={upVisibilityStyle} onClick={(e) => voteUp(e)}><span className="arrowUp">{arrowUp}</span></button>
 
         </div>
     )

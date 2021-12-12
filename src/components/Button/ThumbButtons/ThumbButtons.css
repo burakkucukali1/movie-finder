@@ -8,6 +8,29 @@
     border-radius:10px;
 }
 
+
+.arrowUp, .arrowDown{
+    color: #EFEC98;
+    font-size:1.1em;
+}
+.arrowDown:hover{
+    color:#C2B3B3;
+}
+.arrowUp:hover{
+    color:#C2B3B3;
+}
+
+.button-container>button{
+    background-color:transparent;
+	color: inherit;
+	border: none;
+border-radius:50%;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 @media(max-width:500px){
     .button-container{
         width:350px;
