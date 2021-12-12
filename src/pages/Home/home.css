@@ -9,7 +9,12 @@
     overflow-y: hidden;
     transition: height .5s linear;
 }
-
+.container{
+    margin-top:60px;
+    width: 1200px;
+    height:360px;
+    margin:auto;
+}
 @media(max-width:500px){
     .container{
         width: 375px;

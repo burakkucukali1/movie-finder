@@ -1,10 +1,10 @@
 import React from 'react'
 import './Selector.css'
-function Index({ selectList, handleClick, activeButton }) {
+function Index({ title, selectList, handleClick, activeButton }) {
 
     return (
         <div className="selector">
-            <h2 className="selector__h2">What's Popular</h2>
+            <h2 className="selector__h2">{title}</h2>
             <div className="selector__list">
                 {selectList.map((item, index) => {
                     const className = activeButton === item.name ? "active" : "";

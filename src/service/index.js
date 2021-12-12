@@ -6,6 +6,8 @@ const streamingMovieUrl = `${baseUrl}/discover/movie?api_key=${apiKey}&watch_reg
 const onTvUrl = `${baseUrl}/tv/popular?api_key=${apiKey}`
 const forRentUrl = `${baseUrl}/discover/movie?api_key=${apiKey}&watch_region=US&with_watch_monetization_types=rent`
 const inTheatresUrl = `${baseUrl}/discover/movie?api_key=${apiKey}&region=US&with_release_type=3|2`
+const freeMoviesUrl = `${baseUrl}/discover/movie?api_key=${apiKey}`
+const freeTvUrl = `${baseUrl}/discover/tv?api_key=${apiKey}`
 const baseImgUrl = 'https://image.tmdb.org/t/p/original';
 
 export const fetchStreamingMovies = async () => {
@@ -14,7 +16,7 @@ export const fetchStreamingMovies = async () => {
         const modifiedData = data['results'].map((movie) => ({
             id: movie.id,
             name: movie.original_title,
-            voteRate: parseInt(movie.vote_average) * 10,
+            voteRate: Number(movie.vote_average) * 10,
             date: movie.release_date,
             posterUrl: `${baseImgUrl}${movie.poster_path}`
         }))
@@ -27,7 +29,7 @@ export const fetchPopularsOnTv = async () => {
         const modifiedData = data['results'].map((tvPopular) => ({
             id: tvPopular.id,
             name: tvPopular.name,
-            voteRate: parseInt(tvPopular.vote_average) * 10,
+            voteRate: Number(tvPopular.vote_average) * 10,
             date: tvPopular.first_air_date,
             posterUrl: `${baseImgUrl}${tvPopular.poster_path}`
         }))
@@ -40,7 +42,7 @@ export const fetchForRents = async () => {
         const modifiedData = data['results'].map((item) => ({
             id: item.id,
             name: item.original_title,
-            voteRate: parseInt(item.vote_average) * 10,
+            voteRate: Number(item.vote_average) * 10,
             date: item.release_date,
             posterUrl: `${baseImgUrl}${item.poster_path}`
         }))
@@ -53,8 +55,34 @@ export const fetchTheatres = async () => {
         const modifiedData = data['results'].map((theatre) => ({
             id: theatre.id,
             name: theatre.original_title,
-            voteRate: parseInt(theatre.vote_average) * 10,
+            voteRate: Number(theatre.vote_average) * 10,
             date: theatre.release_date,
+            posterUrl: `${baseImgUrl}${theatre.poster_path}`
+        }))
+        return modifiedData
+    } catch (error) { }
+}
+export const fetchFreeMovies = async () => {
+    try {
+        const { data } = await axios.get(freeMoviesUrl)
+        const modifiedData = data['results'].map((theatre) => ({
+            id: theatre.id,
+            name: theatre.original_title,
+            voteRate: Number(theatre.vote_average) * 10,
+            date: theatre.release_date,
+            posterUrl: `${baseImgUrl}${theatre.poster_path}`
+        }))
+        return modifiedData
+    } catch (error) { }
+}
+export const fetchFreeTv = async () => {
+    try {
+        const { data } = await axios.get(freeTvUrl)
+        const modifiedData = data['results'].map((theatre) => ({
+            id: theatre.id,
+            name: theatre.original_title,
+            voteRate: Number(theatre.vote_average) * 10,
+            date: theatre.first_air_date,
             posterUrl: `${baseImgUrl}${theatre.poster_path}`
         }))
         return modifiedData
