@@ -1,5 +1,6 @@
 import React from 'react'
 import './Selector.css'
+
 function Index({ title, selectList, handleClick, activeButton }) {
 
     return (

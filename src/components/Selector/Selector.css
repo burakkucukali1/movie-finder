@@ -28,6 +28,7 @@ white-space: nowrap;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+    transition:0.5s;
     
 }
 .selector__h2{
@@ -47,18 +48,13 @@ white-space: nowrap;
     background:linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
     -webkit-text-fill-color:transparent;
     -webkit-background-clip: text;
-    color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
+    transition:0.5s;
 }
+
 .selected{
     border-radius:30px;
     background-color:#032541;
-    transition:1.0s;
+    transition:0.5s;
 }
 
 @media(max-width:500px){
