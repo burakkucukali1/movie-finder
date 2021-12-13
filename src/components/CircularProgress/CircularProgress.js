@@ -10,7 +10,6 @@ function CircularProgress({ voteRate }) {
                     pathWidth={20}
                     pathColor={['green', 'yellow']}
                     trailWidth={20}
-                    // size={45}
                     backgroundColor={'#000'}
                     trailColor='#363636'
                     textStyle={{ fill: '#fff' }}
