@@ -1,7 +1,7 @@
 import React from 'react'
 import PopularList from '../../components/List/PopularList'
 import FreeList from '../../components/List/FreeList'
-import './Home.css'
+import './Home.css';
 
 function Home() {
 
